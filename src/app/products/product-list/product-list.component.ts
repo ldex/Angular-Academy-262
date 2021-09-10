@@ -89,7 +89,10 @@ export class ProductListComponent implements OnInit {
   }
 
   refresh() {
-    this.productService.initProducts();
-    this.router.navigateByUrl('/products'); // Self route navigation
+    this.productService.resetList();
+
+    this.start = 0;
+    this.end = this.pageSize;
+    this.currentPage = 1;
   }
 }
