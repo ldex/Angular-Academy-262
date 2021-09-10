@@ -42,10 +42,10 @@ export class ProductService {
       .pipe(
         delay(1500),
         tap(console.table),
-        shareReplay(),
+//        shareReplay(),
         map(
           newProducts => {
-            let currentProducts = this.productsSubject.value;
+            const currentProducts = this.productsSubject.value;
             return currentProducts.concat(newProducts);
           }
         )

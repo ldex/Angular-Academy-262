@@ -71,7 +71,10 @@ export class ProductListComponent implements OnInit {
 
     this.products$ = this
                       .productService
-                      .products$;
+                      .products$
+                      .pipe(
+                        filter(products => products.length > 0)
+                      );
 
     this.productsNumber$ = this
                             .products$
